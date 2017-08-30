@@ -1,0 +1,29 @@
+server:
+    address: 0.0.0.0
+    port: 80
+    contextPath: /weixinAuth
+spring:
+    profiles:
+        active: dev
+    aop:
+        proxy-target-class: true
+    http:
+        encoding.charset: UTF-8
+        encoding.enable: true
+        encoding.force: true
+multipart:
+    enabled: true
+    max-file-size: 20Mb
+    max-request-size: 20Mb
+
+logging:
+    file: ./logs/weixinAuth.log
+---
+spring:
+    profiles: dev
+logging:
+    level:
+        root: INFO
+        com.physicalpoint: DEBUG
+        org.apache: ERROR
+---
